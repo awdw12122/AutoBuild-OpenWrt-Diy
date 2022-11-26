@@ -128,3 +128,9 @@ jobs:
       with:
         name: OpenWrt firmware lede x64${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
+
+    - name: Delete workflow runs
+      uses: GitRML/delete-workflow-runs@main
+      with:
+        retain_days: 5
+        keep_minimum_runs: 8
