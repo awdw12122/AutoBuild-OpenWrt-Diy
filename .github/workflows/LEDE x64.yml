@@ -52,9 +52,10 @@ jobs:
     - name: Import external feeds - mosdns
       working-directory: ./openwrt
       run: |
+        rm -rf feeds/luci/applications/luci-app-mosdns
+        rm -rf feeds/packages/net/mosdns
         rm -rf feeds/ssrp/v2ray-geodata
-        git clone https://github.com/sbwml/v2ray-geodata feeds/ssrp/v2ray-geodata
-    #    git clone "your_github_link" package/"your_folder_name"       
+        git clone https://github.com/QiuSimons/openwrt-mos.git package/openwrt-mos      
 
     - name: Configuration Customization
       env:
