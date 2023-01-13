@@ -72,6 +72,10 @@ jobs:
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
         cd openwrt
+        rm -rf feeds/luci/applications/luci-app-mosdns
+        rm -rf feeds/packages/net/mosdns
+        rm -rf feeds/ssrp/v2ray-geodata
+        git clone https://github.com/QiuSimons/openwrt-mos.git package/openwrt-mos        
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: Download package
